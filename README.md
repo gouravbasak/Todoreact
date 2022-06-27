@@ -1,49 +1,99 @@
-# React Todo App
+# MERN CRUD
 
-This is a sample react todo app done step-by-step.
-This sample app was a part of react workshop.
+A simple records system using MongoDB, Express.js, React.js, and Node.js with real-time Create, Read, Update, and Delete operations using Socket.io. REST API was implemented on the back-end. Semantic UI React was used for the UI.
 
-You can check the slides [here](https://speakerdeck.com/kabirbaidhya/frontend-development-with-react).
+![Node Version](https://img.shields.io/badge/node-v12.16.3-yellowgreen.svg)
+![NPM Version](https://img.shields.io/badge/npm-v6.14.4-blue.svg)
+![MongoDB Version](https://img.shields.io/badge/mongodb-v3.6.12-blue.svg)
+![Mongoose Version](https://img.shields.io/badge/mongoose-v5.9.13-blue.svg)
+![Language: American English](https://img.shields.io/badge/language-american%20english-red.svg)
 
-Check the demo hosted on heroku https://simplest-react-todo-app.herokuapp.com/.
 
+Demo: [https://mern-crud.herokuapp.com/](https://mern-crud.herokuapp.com/)
+
+![MERN CRUD Screenshot](screenshot.png)
+
+## Show Some :heart: :wave:
+[![GitHub Stars](https://img.shields.io/github/stars/cefjoeii/mern-crud.svg?style=social&label=Star)](https://github.com/cefjoeii/mern-crud)
+[![GitHub Forks](https://img.shields.io/github/forks/cefjoeii/mern-crud.svg?style=social&label=Fork)](https://github.com/cefjoeii/mern-crud/fork)
+[![GitHub Watchers](https://img.shields.io/github/watchers/cefjoeii/mern-crud.svg?style=social&label=Watch)](https://github.com/cefjoeii/mern-crud)
+
+[![Follow on GitHub](https://img.shields.io/github/followers/cefjoeii.svg?style=social&label=Follow)](https://github.com/cefjoeii)
+[![Follow on Facebook](https://img.shields.io/badge/Follow%20%40cefjoeii%20on-Facebook-%233C5A99.svg)](https://facebook.com/cefjoeii)
+[![Follow on Instagram](https://img.shields.io/badge/Follow%20%40cefjoeii%20on-Instagram-C13584.svg)](https://instagram.com/cefjoeii)
+[![Follow on Twitter](https://img.shields.io/twitter/follow/cefjoeii.svg?style=social)](https://twitter.com/cefjoeii)
 
 ## Instructions
 
-First clone this repository.
+Fork, then download or clone the repo.
 ```bash
-$ git clone https://github.com/kabirbaidhya/react-todo-app.git
+git clone https://github.com/<your-user-name>/mern-crud.git
 ```
 
-Install dependencies. Make sure you already have [`nodejs`](https://nodejs.org/en/) & [`npm`](https://www.npmjs.com/) installed in your system.
-```bash
-$ npm install # or yarn
+
+*Make sure MongoDB service is running.*
+
+The *config* folder contains a file named *db.js*. Before running locally, change the value of db as seen in the code below.
+```js
+module.exports = {
+  db: 'mongodb://localhost/mern-crud'
+};
 ```
 
-Run it
+For the **back-end**, install the dependencies once via the terminal.
 ```bash
-$ npm start # or yarn start
+npm install
 ```
 
-## Steps
-Each step is a branch. Check out to the step you want to test.
+Run the *main server*. It listens on port 3000.
+```bash
+CORS=1 node server
+```
+View it on the browser.
+
+<br>
+
+If you want to configure the **front-end**, go to *react-src* folder via the terminal.
 
 ```bash
-$ git checkout <step-number>    # eg: git checkout step-1
+cd react-src
 ```
-* [step-0](https://github.com/kabirbaidhya/react-todo-app/commits/step-0) - Setup app using `create-react-app`.
-* [step-1](https://github.com/kabirbaidhya/react-todo-app/commits/step-1) - React Hello World.
-* [step-2](https://github.com/kabirbaidhya/react-todo-app/commits/step-2) - Add some JSX for the todoapp.
-* [step-3](https://github.com/kabirbaidhya/react-todo-app/commits/step-3) - List todo items dynamically.
-* [step-4](https://github.com/kabirbaidhya/react-todo-app/commits/step-4) - Create `TodoList` component.
-* [step-5](https://github.com/kabirbaidhya/react-todo-app/commits/step-5) - Extract more components: `TodoItem`, & `Header`.
-* [step-6](https://github.com/kabirbaidhya/react-todo-app/commits/step-6) - Add `Footer` component to display count.
-* [step-7](https://github.com/kabirbaidhya/react-todo-app/commits/step-7) - Add `InputBox` component.
-* [step-8](https://github.com/kabirbaidhya/react-todo-app/commits/step-8) - Convert to stateful components.
-* [step-9](https://github.com/kabirbaidhya/react-todo-app/commits/step-9) - Add new todo item.
-* [step-10](https://github.com/kabirbaidhya/react-todo-app/commits/step-10) - Add todo list filter.
-* [step-11](https://github.com/kabirbaidhya/react-todo-app/commits/step-11) - Refactor code by moving logic to services.
-* [step-12](https://github.com/kabirbaidhya/react-todo-app/commits/step-12) - Make check/uncheck change the todo item status to completed/pending.
-* [step-13](https://github.com/kabirbaidhya/react-todo-app/commits/step-13) - Refactor code and design improvements.
-* [step-14](https://github.com/kabirbaidhya/react-todo-app/commits/step-14) - Refactor and separate UI & stateful components.
-* [step-15](https://github.com/kabirbaidhya/react-todo-app/commits/step-15) - Finalization of TodoApp.
+
+Install the dependencies required by React once.
+```bash
+npm install
+```
+
+Run the *development server* for React. It listens on port 4200.
+```bash
+REACT_APP_API_URL=http://localhost:3000 npm start
+```
+
+To make a production build, simply run on *react-src* folder via the terminal.
+```bash
+npm run build
+```
+
+It re-creates a folder named *public* on the root directory. This is where the production-ready front-end of the web application resides.
+
+## Docker
+```bash
+docker-compose up
+```
+
+
+## Contribute
+Feel free to help out as I may have other work/life commitments. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## To Do
+
+- [x] Create
+- [x] Read
+- [x] Update
+- [x] Delete
+- [x] Real-time broadcast using Socket.io
+- [x] Deploy in Heroku
+- [x] Front-end validation (HTML)
+
+## License
+* [MIT](LICENSE)
